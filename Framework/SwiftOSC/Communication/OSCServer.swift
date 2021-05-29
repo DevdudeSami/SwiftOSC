@@ -171,7 +171,7 @@ open class OSCServer {
                                     message?.add(Timetag(messageData.subdata(in: Range(0...7))))
                                     messageData = messageData.subdata(in: 8..<messageData.count)
                                 default:
-                                    #ifdef DEBUG
+                                    #if DEBUG
                                     print("unknown osc type: ", type, message)
                                     #else
                                     break
