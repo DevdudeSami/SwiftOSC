@@ -24,7 +24,9 @@ import Foundation
     open func send(_ element: OSCElement){
         let data = element.data
         if data.count > 9216 {
+            #ifdef DEBUG
             print("OSCPacket is too large. Must be smaller than 9200 bytes")
+            #endif
         } else {
             _ = client.send(data:data)
         }
